@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="Main_empty" Height="600" Width="800">
     <Grid Height="600" Width="800">
-        
+        <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Source="/профиль.png"/>
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="123,96,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Label Content="Создайте свою первую" HorizontalAlignment="Left" Margin="123,161,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Label Content="задачу!" HorizontalAlignment="Left" Margin="123,187,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Button Content="Создать первую задачу" Width="180" Height="30" BorderBrush="#F96860" Margin="220,398,400,172" Background="#F96860" FontSize="14" Foreground="White">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3,3,3,3"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
     </Grid>
 </Window>
