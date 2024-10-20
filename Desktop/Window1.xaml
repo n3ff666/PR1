@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="800" MinHeight="600" MinWidth="800">
     <Grid Width="800">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="79*"/>
@@ -16,14 +16,18 @@
         <WrapPanel Margin="120,0,0,0" Orientation="Vertical" VerticalAlignment="Center" Grid.Column="2" Height="516" HorizontalAlignment="Left" Width="327">
             <Label Content="Welcome back" FontSize="30" Margin="0,0,0,60"/>
             <Label Content="Имя пользователя" FontSize="20" Margin="0,-40,0,0"/>
-            <TextBox TextWrapping="Wrap" Text="Введите имя пользователя" Width="326" Opacity="0.4" Height="40" Padding="0,10,0,0" FontFamily="Actor" BorderThickness="0,0,0,1"/>
+            <local:PlaceTextBox FontSize="12" PlaceBrush="gray" PlaceText="Введите имя пользователя"
+                PlaceMargin="0,10,0,0" Height="40" BorderThickness="0,0,0,1" Opacity="0.8" Padding="0,10,0,0"/>
             <Label Content="Ваша почта" FontSize="20" FontFamily="Actor" Padding="5,5,5,3"/>
-            <TextBox TextWrapping="Wrap" Text="exam@yandex" Width="326" Opacity="0.4" Height="40" Padding="0,10,0,0" BorderThickness="0,0,0,1"/>
+            <local:PlaceTextBox FontSize="12" PlaceBrush="gray" PlaceText="exam@yandex.ru"
+                PlaceMargin="0,10,0,0" Height="40" BorderThickness="0,0,0,1" Opacity="0.8" Padding="0,10,0,0"/>
             <Label Content="Пароль" FontSize="20" FontFamily="Actor" Padding="5,5,5,3"/>
-            <TextBox TextWrapping="Wrap" Text="Введите пароль" Width="326" Opacity="0.4" Height="40" Padding="0,10,0,0" BorderThickness="0"/>
+            <local:PlaceTextBox FontSize="12" PlaceBrush="gray" PlaceText="Введите пароль"
+                PlaceMargin="0,10,0,0" Height="40" BorderThickness="0,0,0,1" Opacity="0.8" Padding="0,10,0,0"/>
             <Label Content="Повторите пароль" FontSize="20" FontFamily="Actor" Padding="5,5,5,3"/>
-            <TextBox TextWrapping="Wrap" Text="Повторите пароль" Width="326" Opacity="0.4" Height="40" Padding="0,10,0,0" BorderThickness="0"/>
-            <Button Content="Зарегистрироваться" Width="auto" Height="46" BorderBrush="#F96860" Margin="5,20,5,5" Background="#F96860" FontSize="20" Foreground="White">
+            <local:PlaceTextBox FontSize="12" PlaceBrush="gray" PlaceText="Повторите пароль"
+                PlaceMargin="0,10,0,0" Height="40" BorderThickness="0,0,0,1" Opacity="0.8" Padding="0,10,0,0"/>
+            <Button Content="Зарегистрироваться" Width="317" Height="46" BorderBrush="#F96860" Margin="5,20,5,5" Background="#F96860" FontSize="20" Foreground="White">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10,10,3,3"/>
