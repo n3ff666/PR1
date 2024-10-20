@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -204,7 +205,23 @@ namespace Desktop
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public static class InputValidator
+        {
+            // Регулярное выражение для проверки email
+            private static readonly string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            public static bool ValidateEmail(string email)
+            {
+                return Regex.IsMatch(email, emailPattern);
+            }
+
+            public static bool ValidatePassword(string password)
+            {
+                // Пароль должен быть не менее 6 символов
+                return password.Length >= 6;
+            }
+        }
+            private void Button_Click(object sender, RoutedEventArgs e)
         {
 
             Window1 window1 = new Window1();
@@ -216,7 +233,29 @@ namespace Desktop
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            string email = emailtextbox.Text; // Email
+            string password = passwordtextbox.Text; // Пароль
 
+            if (!InputValidator.ValidateEmail(email))
+            {
+                MessageBox.Show("Введите корректную почту.");
+                return;
+            }
+
+            if (!InputValidator.ValidatePassword(password))
+            {
+                MessageBox.Show("Пароль должен быть не менее 6 символов.");
+                return;
+            }
+
+            // Данные корректны
+            MessageBox.Show("Вход выполнен");
+
+            Main_empty main_Empty = new Main_empty();
+
+            main_Empty.Show();
+
+            this.Close();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

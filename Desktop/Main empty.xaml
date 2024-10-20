@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="Main_empty" Height="600" Width="800">
+        Title="Main_empty" Height="600" Width="800" MinHeight="600" MinWidth="800">
     <Grid Height="600" Width="800">
-        <Image HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Source="/профиль.png"/>
-        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="123,96,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="Создайте свою первую" HorizontalAlignment="Left" Margin="123,161,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Label Content="задачу!" HorizontalAlignment="Left" Margin="123,187,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Image Source="/профиль.png" RenderTransformOrigin="0.715,0.676" Width="75" Height="75" Margin="10,10,715,515" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="123,96,0,0" VerticalAlignment="Top" FontSize="32"/>
+        <Label Content="Создайте свою первую" HorizontalAlignment="Left" Margin="123,161,0,0" VerticalAlignment="Top" FontSize="32"/>
+        <Label Content="задачу!" HorizontalAlignment="Left" Margin="123,200,0,0" VerticalAlignment="Top" FontSize="32"/>
         <Button Content="Создать первую задачу" Width="180" Height="30" BorderBrush="#F96860" Margin="220,398,400,172" Background="#F96860" FontSize="14" Foreground="White">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
