@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Main_empty" Height="600" Width="800" MinHeight="600" MinWidth="800">
     <Grid Height="600" Width="800">
-        <Image Source="/профиль.png" RenderTransformOrigin="0.715,0.676" Width="75" Height="75" Margin="10,10,715,515" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image Source="/профиль.png" Width="75" Height="75" Margin="-700,-500,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="123,96,0,0" VerticalAlignment="Top" FontSize="32"/>
         <Label Content="Создайте свою первую" HorizontalAlignment="Left" Margin="123,161,0,0" VerticalAlignment="Top" FontSize="32"/>
         <Label Content="задачу!" HorizontalAlignment="Left" Margin="123,200,0,0" VerticalAlignment="Top" FontSize="32"/>
