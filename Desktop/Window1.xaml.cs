@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,56 +26,28 @@ namespace Desktop
             InitializeComponent();
         }
 
-        public static class InputValidator
-        {
-            // Регулярное выражение для проверки email
-            private static readonly string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-
-            public static bool ValidateEmail(string email)
-            {
-                return Regex.IsMatch(email, emailPattern);
-            }
-
-            public static bool ValidatePassword(string password)
-            {
-                // Пароль должен быть не менее 6 символов
-                return password.Length >= 6;
-            }
-
-            public static bool ValidateUsername(string username)
-            {
-                // Имя должно быть не менее 3 символов
-                return username.Length >= 3;
-            }
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Main_empty main_Empty = new Main_empty();
-
-            main_Empty.Show();
-
-            this.Close();
-
+            // Получение данных из текстовых полей
             string username = usernameTextBox.Text; // Имя пользователя
             string email = emailTextBox.Text; // Email
             string password = passwordTextBox.Text; // Пароль
             string confirmPassword = confirmPasswordTextBox.Text; // Подтверждение пароля
 
             // Валидация данных
-            if (!InputValidator.ValidateUsername(username))
+            if (!username.ValidateUsername())
             {
                 MessageBox.Show("Имя пользователя должно быть не менее 3 символов.");
                 return;
             }
 
-            if (!InputValidator.ValidateEmail(email))
+            if (!email.ValidateEmail())
             {
                 MessageBox.Show("Введите корректную почту.");
                 return;
             }
 
-            if (!InputValidator.ValidatePassword(password))
+            if (!password.ValidatePassword())
             {
                 MessageBox.Show("Пароль должен быть не менее 6 символов.");
                 return;
@@ -86,22 +59,18 @@ namespace Desktop
                 return;
             }
 
-            // Данные корректны
-            MessageBox.Show("Регистрация успешна!");
+            // Если все данные корректны, выводим сообщение об успешной регистрации и открываем новое окно
+            MessageBox.Show("Вы успешно зарегистрированы!");
+
+            Main_empty main_Empty = new Main_empty();
+            main_Empty.Show();
+            this.Close();
         }
 
-       
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             // Логика для кнопки "Назад"
             MessageBox.Show("Вернуться назад");
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainwindow = new MainWindow();
-            mainwindow.Show();
-            this.Close();
         }
     }
 }
